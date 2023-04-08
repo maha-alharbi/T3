@@ -56,12 +56,6 @@ public class QuoteConsumer {
     public Consumer.Control createConsumer (){
         Consumer.Control control =
                 Consumer.plainSource(consumerSettings, Subscriptions.topics(topicName))
-//                    .map(10, record -> business(record.key(), record.value()))
-//                        .map(record -> {
-//                            String JsonValue = new String(record.value());
-//                            System.out.println("Consumer Json Value: " + JsonValue);
-//                            return JsonValue;
-//                        })
                         .map(record -> record.value())
                         .map(value -> {
                             QuoteMsg quoteMsg = reader.readValue(value, QuoteMsg.class);

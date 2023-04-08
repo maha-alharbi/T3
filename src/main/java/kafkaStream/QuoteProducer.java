@@ -41,15 +41,13 @@ public class QuoteProducer {
         this.sink = Producer.plainSink(producerSettings);
     }
 
-//    private static final ActorSystem system = ActorSystem.create();
+
 
 
     ObjectMapper mapper = new ObjectMapper();
 
     public void sendDataViaProducer(QuoteMsg quote) throws Exception {
 
-//        LinkedList quoteList = new LinkedList<>();
-//        quoteList.add(quote);
 
         System.out.println("Topic Name : " + topicName);
         // #plainSink

@@ -44,7 +44,7 @@ public class Auditor extends AbstractActor{
             }
 
         }
-        //if the requested operation is "sell"
+        //if the requested operation is "sale"
         else if (opType == 2){
               newBalance = balance + amount;
             FakeDB.TradersBalance.replace(traderId,newBalance);
