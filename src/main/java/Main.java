@@ -16,10 +16,15 @@ public class Main {
         ActorRef auditorActor = akkaSystem.actorOf(Auditor.props(), "auditorActor");
         ActorRef traderActor = akkaSystem.actorOf(Trader.props(auditorActor), "traderActor");
         QuoteMsg  first = new QuoteMsg("Google", 300, 200, 1);
+       // QuoteMsg  first = new QuoteMsg("Google", 400, 500, 1);
         QuoteMsg  second = new QuoteMsg("Oracle", 900, 800, 1);
+       // QuoteMsg  second = new QuoteMsg("Oracle", 400, 500, 1);
         QuoteMsg  third = new QuoteMsg("Microsoft", 500, 600, 1);
+       // QuoteMsg  third = new QuoteMsg("Microsoft", 400, 500, 1);
         QuoteMsg  fourth = new QuoteMsg("IBM", 1000, 1100, 1);
+       // QuoteMsg  fourth = new QuoteMsg("IBM", 400, 500, 1);
         QuoteMsg  fifth = new QuoteMsg("Aramco", 200, 300, 1);
+        // QuoteMsg  fifth = new QuoteMsg("Aramco", 400, 500, 1);
 
         QuoteConsumer qConsumer = new QuoteConsumer(traderActor, akkaSystem);
 
@@ -28,7 +33,7 @@ public class Main {
         QuoteProducer qProducer = new QuoteProducer(akkaSystem);
 
         try {
-            Thread.sleep(30000);
+            Thread.sleep(20000);
             System.out.println("Sending messages by producer !!!");
             qProducer.sendDataViaProducer(first);
             qProducer.sendDataViaProducer(second);

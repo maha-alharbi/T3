@@ -52,7 +52,7 @@ public class Trader extends AbstractActor {
         TradeRequest tradeRequest;
 
         //if the buy price is greater than the sell price we will make a "buy" operation, by sending trade request to the Auditor Actor
-        if (buyPrice > sellPrice) {
+        if (buyPrice >= sellPrice) {
 
             tradeRequest = new TradeRequest(traderID, sellPrice, 1);
             makeTrade(tradeRequest, companyName);
