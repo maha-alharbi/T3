@@ -19,7 +19,7 @@ public class Main {
         QuoteMsg  second = new QuoteMsg("Oracle", 900, 800, 1);
         QuoteMsg  third = new QuoteMsg("Microsoft", 500, 600, 1);
         QuoteMsg  fourth = new QuoteMsg("IBM", 1000, 1100, 1);
-        QuoteMsg  fifth = new QuoteMsg("SDAIA", 200, 300, 1);
+        QuoteMsg  fifth = new QuoteMsg("Aramco", 200, 300, 1);
 
         QuoteConsumer qConsumer = new QuoteConsumer(traderActor, akkaSystem);
 
@@ -29,7 +29,7 @@ public class Main {
 
         try {
             Thread.sleep(30000);
-            System.out.println("Sending messages by producer !!!!!!");
+            System.out.println("Sending messages by producer !!!");
             qProducer.sendDataViaProducer(first);
             qProducer.sendDataViaProducer(second);
             qProducer.sendDataViaProducer(third);
